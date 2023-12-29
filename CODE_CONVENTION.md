@@ -1,6 +1,6 @@
 # Code convention
 
-### General
+## General
 
 * No method without proper docstrings.
 * We use [Google Docstring](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings) convention for code documentation.
@@ -11,24 +11,29 @@
 * We enforce the use of [Black](https://github.com/psf/black) as the code formatter.
 * We enforce the use of [Flake8](https://flake8.pycqa.org/en/latest) as the static code verification tool.
 
-### Linting hooks
+## Contributing
+Install the required additional packages to contribute to project
+```shell
+pip install -r requirements-dev.txt
+```
+
+
+## Linting hooks
 
 We use pre-commit hooks to guarantee the standard of the code. You can use it by:
-```console
-pip install pre-commit
+```shell
 cd facedetectionapp
+pip install pre-commit
 pre-commit install --hook-type pre-commit --hook-type pre-push
 ```
 
-## Quality checks
+### Quality checks
 
-Before any merge on the master branch, all automatic tests must pass.
-
-You can manually run them with the following command:
+You can manually run quality checks with the following command:
 
 ```shell
-$ cd facedetectionapp
-$ source ./env/bin/activate
+cd facedetectionapp
+source ./env/bin/activate
 (base)$ make pre-commit
 ```
 
@@ -41,7 +46,19 @@ The figure below illustrate the checks performed
 
 ![checks](docs/assets/precommit_pipeline.png)
 
-### Commit convetion
+### Disabling pre-commit temporarily
+```shell
+git commit --no-verify -m "Your commit message"
+```
+
+### Uninstalling pre-commit:
+```shell
+pip uninstall pre-commit
+```
+If you also want to remove the configuration file and hooks, you can manually delete the .pre-commit-config.yaml file and the .git/hooks/pre-commit file in your project directory.
+
+
+## Commit convetion
 We adopt the [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) 
 
-### Git Branching Naming Convention
+## Git Branching Naming Convention

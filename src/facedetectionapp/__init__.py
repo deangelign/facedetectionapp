@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
 """facedetectionapp package file."""
 
-import sys
-from pathlib import Path
-
-
 __name__ = "facedetectionapp"
 __version__ = "0.1.0"
 
